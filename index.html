@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfroBridge | Connexion Diplomatique & Agricole</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --vert-foret: #1b4332;
+            --or-prestige: #d4af37;
+            --blanc-pur: #ffffff;
+            --gris-clair: #f8f9fa;
+            --noir-texte: #2d3436;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--blanc-pur);
+            color: var(--noir-texte);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: var(--blanc-pur);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--vert-foret);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span { color: var(--or-prestige); }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--vert-foret);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--or-prestige); }
+
+        .lang-selector select {
+            border: 1px solid var(--or-prestige);
+            padding: 5px;
+            border-radius: 5px;
+            background: transparent;
+        }
+
+        /* --- SECTION HERO --- */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(27, 67, 50, 0.8)), 
+                        url('https://images.unsplash.com/photo-1530531109062-0e9e4250269e?auto=format&fit=crop&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ecf0f1;
+        }
+
+        .btn-join {
+            background-color: var(--or-prestige);
+            color: var(--vert-foret);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.4s;
+            text-transform: uppercase;
+        }
+
+        .btn-join:hover {
+            transform: scale(1.05);
+            background-color: var(--blanc-pur);
+        }
+
+        /* --- SECTION PRODUITS --- */
+        .section-padding { padding: 80px 8%; }
+        .title-center { text-align: center; margin-bottom: 50px; }
+        .title-center h2 { color: var(--vert-foret); font-size: 2.5rem; }
+
+        .grid-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--gris-clair);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            border-bottom: 5px solid var(--or-prestige);
+        }
+
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 25px; text-align: center; }
+
+        /* --- SECTION POURQUOI NOUS --- */
+        .features {
+            background-color: var(--vert-foret);
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item { text-align: center; padding: 20px; }
+        .feature-item i { font-size: 3rem; color: var(--or-prestige); margin-bottom: 15px; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            border-top: 3px solid var(--or-prestige);
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; }
+            .nav-links { gap: 15px; font-size: 0.9rem; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <i class="fas fa-handshake"></i> Afro<span>Bridge</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#produits">Produits</a></li>
+            <li><a href="tel:0173176867">Contact: 0173176867</a></li>
+        </ul>
+        <div class="lang-selector">
+            <select>
+                <option value="fr">FR 🇫🇷</option>
+                <option value="en">EN 🇺🇸</option>
+                <option value="cn">CN 🇨🇳</option>
+            </select>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Le Pont Direct entre la Terre Ivoirienne et le Marché Mondial</h1>
+        <p>Diplomatie commerciale, transparence garantie et excellence agricole.</p>
+        <a href="#" class="btn-join">Rejoindre le Réseau</a>
+    </section>
+
+    <section class="section-padding" id="produits">
+        <div class="title-center">
+            <h2>Nos Filières d'Excellence</h2>
+        </div>
+        <div class="grid-products">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&q=80" alt="Cacao">
+                <div class="card-content">
+                    <h3>Cacao</h3>
+                    <p>L'or brun de Côte d'Ivoire, certifié et traçable.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80" alt="Café">
+                <div class="card-content">
+                    <h3>Café</h3>
+                    <p>Un arôme intense issu des meilleures plantations.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?auto=format&fit=crop&q=80" alt="Anacarde">
+                <div class="card-content">
+                    <h3>Anacarde</h3>
+                    <p>Noix de cajou de premier choix pour l'exportation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding features">
+        <div class="feature-item">
+            <i class="fas fa-search-dollar"></i>
+            <h3>Transparence</h3>
+            <p>Un suivi rigoureux des transactions pour une confiance totale.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-microchip"></i>
+            <h3>Technologie</h3>
+            <p>Plateforme intelligente connectant l'offre et la demande en temps réel.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-users"></i>
+            <h3>Impact Social</h3>
+            <p>Améliorer les revenus des planteurs ivoiriens durablement.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AfroBridge - Plateforme Diplomatique Agricole</p>
+        <p>Conçu avec excellence par <strong>Ismael Diakite</strong></p>
+    </footer>
+
+</body>
+</html>
