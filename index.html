@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfroBridge | Connexion Diplomatique & Agricole</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --vert-foret: #1b4332;
+            --or-prestige: #d4af37;
+            --blanc-pur: #ffffff;
+            --gris-clair: #f8f9fa;
+            --noir-texte: #2d3436;
+            --input-border: #ced4da;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        body { background-color: var(--blanc-pur); color: var(--noir-texte); line-height: 1.6; scroll-behavior: smooth; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%; background: var(--blanc-pur);
+            position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--vert-foret); display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--or-prestige); }
+
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--vert-foret); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--or-prestige); }
+
+        .lang-selector select {
+            padding: 5px 10px; border: 1px solid var(--or-prestige); border-radius: 5px; cursor: pointer; outline: none;
+        }
+
+        /* --- HERO --- */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(27, 67, 50, 0.8)), 
+                        url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80') center/cover;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 2.8rem; margin-bottom: 20px; max-width: 900px; }
+
+        /* --- PRODUITS --- */
+        .section-padding { padding: 80px 8%; }
+        .title-center { text-align: center; margin-bottom: 50px; }
+        .title-center h2 { color: var(--vert-foret); font-size: 2.5rem; }
+
+        .grid-products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: var(--gris-clair); border-radius: 15px; overflow: hidden; transition: 0.3s; border-bottom: 5px solid var(--or-prestige); }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card-content { padding: 25px; text-align: center; }
+
+        /* --- CONTACT FORM --- */
+        .contact-section { background-color: var(--gris-clair); }
+        .contact-container { max-width: 700px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
+        .form-group label { font-weight: 600; color: var(--vert-foret); }
+        .form-group input, .form-group select { padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+        
+        .btn-submit { 
+            background: var(--vert-foret); color: white; border: none; padding: 15px; 
+            width: 100%; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s;
+        }
+        .btn-submit:hover { background: var(--or-prestige); }
+
+        footer { background: #111; color: white; text-align: center; padding: 30px; margin-top: 50px; }
+
+        @media (max-width: 768px) { .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <i class="fas fa-handshake"></i> Afro<span>Bridge</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" data-key="nav_home">Accueil</a></li>
+            <li><a href="#produits" data-key="nav_prod">Produits</a></li>
+            <li><a href="#contact" data-key="nav_contact">Contact</a></li>
+        </ul>
+        <div class="lang-selector">
+            <select id="langSwitch">
+                <option value="fr">Français 🇫🇷</option>
+                <option value="en">English 🇺🇸</option>
+            </select>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1 data-key="hero_title">Le Pont Direct entre la Terre Ivoirienne et le Marché Mondial</h1>
+        <p data-key="hero_sub">Diplomatie commerciale, transparence garantie et excellence agricole.</p>
+    </section>
+
+    <section class="section-padding" id="produits">
+        <div class="title-center">
+            <h2 data-key="prod_title">Nos Filières d'Excellence</h2>
+        </div>
+        <div class="grid-products">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?auto=format&fit=crop&q=80" alt="Cacao">
+                <div class="card-content">
+                    <h3 data-key="card_cacao_t">Cacao</h3>
+                    <p data-key="card_cacao_p">Fèves fermentées, récoltées à la main par nos planteurs locaux.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1504633273314-6a929fcd7090?auto=format&fit=crop&q=80" alt="Café">
+                <div class="card-content">
+                    <h3 data-key="card_cafe_t">Café</h3>
+                    <p data-key="card_cafe_p">Un arôme intense issu des meilleures plantations de Côte d'Ivoire.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1621250285226-77884da09117?auto=format&fit=crop&q=80" alt="Anacarde">
+                <div class="card-content">
+                    <h3 data-key="card_ana_t">Anacarde</h3>
+                    <p data-key="card_ana_p">Noix de cajou brutes de premier choix, triées avec précision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding contact-section" id="contact">
+        <div class="title-center">
+            <h2 data-key="form_title">Devenir Partenaire</h2>
+        </div>
+        <div class="contact-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label data-key="label_nom">Nom</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label data-key="label_prenom">Prénom</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label data-key="label_role">Votre Rôle</label>
+                    <select>
+                        <option value="acheteur" data-key="opt_acheteur">Acheteur</option>
+                        <option value="vendeur" data-key="opt_vendeur">Vendeur</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-key="label_prod">Produit concerné</label>
+                    <select>
+                        <option>Anacarde</option>
+                        <option>Café</option>
+                        <option>Cacao</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit" data-key="btn_send">Envoyer la demande</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AfroBridge - <span data-key="footer_text">Plateforme Diplomatique Agricole</span></p>
+        <p>By Ismael Diakite</p>
+    </footer>
+
+    <script>
+        const translations = {
+            fr: {
+                nav_home: "Accueil",
+                nav_prod: "Produits",
+                nav_contact: "Contact",
+                hero_title: "Le Pont Direct entre la Terre Ivoirienne et le Marché Mondial",
+                hero_sub: "Diplomatie commerciale, transparence garantie et excellence agricole.",
+                prod_title: "Nos Filières d'Excellence",
+                card_cacao_t: "Cacao",
+                card_cacao_p: "Fèves fermentées, récoltées à la main par nos planteurs locaux.",
+                card_cafe_t: "Café",
+                card_cafe_p: "Un arôme intense issu des meilleures plantations de Côte d'Ivoire.",
+                card_ana_t: "Anacarde",
+                card_ana_p: "Noix de cajou brutes de premier choix, triées avec précision.",
+                form_title: "Devenir Partenaire",
+                label_nom: "Nom",
+                label_prenom: "Prénom",
+                label_role: "Votre Rôle",
+                label_prod: "Produit concerné",
+                opt_acheteur: "Acheteur",
+                opt_vendeur: "Vendeur",
+                btn_send: "Envoyer la demande",
+                footer_text: "Plateforme Diplomatique Agricole"
+            },
+            en: {
+                nav_home: "Home",
+                nav_prod: "Products",
+                nav_contact: "Contact",
+                hero_title: "The Direct Bridge Between Ivorian Soil and the Global Market",
+                hero_sub: "Trade diplomacy, guaranteed transparency, and agricultural excellence.",
+                prod_title: "Our Sectors of Excellence",
+                card_cacao_t: "Cocoa",
+                card_cacao_p: "Fermented beans, hand-harvested by our local farmers.",
+                card_cafe_t: "Coffee",
+                card_cafe_p: "An intense aroma from the best plantations in Ivory Coast.",
+                card_ana_t: "Cashew",
+                card_ana_p: "Premium raw cashew nuts, sorted with precision.",
+                form_title: "Become a Partner",
+                label_nom: "Last Name",
+                label_prenom: "First Name",
+                label_role: "Your Role",
+                label_prod: "Interested Product",
+                opt_acheteur: "Buyer",
+                opt_vendeur: "Seller",
+                btn_send: "Send Request",
+                footer_text: "Agricultural Diplomacy Platform"
+            }
+        };
+
+        const langSwitch = document.getElementById('langSwitch');
+        
+        langSwitch.addEventListener('change', (e) => {
+            const lang = e.target.value;
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                element.textContent = translations[lang][key];
+            });
+        });
+    </script>
+</body>
+</html>
